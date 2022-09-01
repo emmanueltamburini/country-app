@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-by-captial',
   templateUrl: './by-captial.component.html',
 })
-export class ByCaptialComponent implements OnInit {
+export class ByCaptalComponent implements OnInit {
 
   constructor() { }
 

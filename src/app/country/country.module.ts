@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ByCaptialComponent } from './pages/by-captial/by-captial.component';
+import { ByCaptalComponent } from './pages/by-captial/by-captal.component';
 import { ByCountryComponent } from './pages/by-country/by-country.component';
 import { ByRegionComponent } from './pages/by-region/by-region.component';
 import { CountryResumeComponent } from './pages/country-resume/country-resume.component';
@@ -9,7 +9,7 @@ import { CountryResumeComponent } from './pages/country-resume/country-resume.co
 
 @NgModule({
   declarations: [
-    ByCaptialComponent,
+    ByCaptalComponent,
     ByCountryComponent,
     ByRegionComponent,
     CountryResumeComponent
@@ -18,7 +18,7 @@ import { CountryResumeComponent } from './pages/country-resume/country-resume.co
     CommonModule
   ],
   exports: [
-    ByCaptialComponent,
+    ByCaptalComponent,
     ByCountryComponent,
     ByRegionComponent,
     CountryResumeComponent
