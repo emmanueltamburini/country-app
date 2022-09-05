@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
 import { ByCaptalComponent } from './pages/by-captial/by-captal.component';
 import { ByCountryComponent } from './pages/by-country/by-country.component';
 import { ByRegionComponent } from './pages/by-region/by-region.component';
@@ -15,7 +17,8 @@ import { CountryResumeComponent } from './pages/country-resume/country-resume.co
     CountryResumeComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports: [
     ByCaptalComponent,
