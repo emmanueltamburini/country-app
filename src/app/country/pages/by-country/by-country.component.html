@@ -15,7 +15,7 @@
   The country {{query}} was not found
 </div>
 
-<div *ngIf="!isError" class="row">
+<div *ngIf="countries.length > 0" class="row">
   <div class="col">
     <table class="table table-hover" aria-describedby="Country information table">
       <thead>
@@ -28,14 +28,16 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th id="number-body"> 1 </th>
-          <th id="flag-body"> bandera </th>
-          <th id="name-body"> nombre </th>
-          <th id="population-body"> 12313 </th>
-          <th id="link-body">
-            <a href="/pais/cri">See more...</a>
-          </th>
+        <tr *ngFor="let country of countries, let i = index">
+          <td id="number-body"> {{i + 1}} </td>
+          <td id="flag-body">
+            <img [src]="country.flag" class="small-flag img-fluid rounded-top" alt="country-flag">
+          </td>
+          <td id="name-body"> {{country.name}} </td>
+          <td id="population-body">{{country.population | number }}</td>
+          <td id="link-body">
+            <a [routerLink]="['/country', country.alpha2Code]">See more...</a>
+          </td>
         </tr>
       </tbody>
     </table>
