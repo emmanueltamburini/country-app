@@ -11,11 +11,11 @@
 
 <hr>
 
-<div class="alert alert-danger">
-  The country Venezuela was not found
+<div *ngIf="isError" class="alert alert-danger">
+  The country {{query}} was not found
 </div>
 
-<div class="row">
+<div *ngIf="!isError" class="row">
   <div class="col">
     <table class="table table-hover" aria-describedby="Country information table">
       <thead>
