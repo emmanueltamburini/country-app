@@ -5,6 +5,7 @@
   <div class="col">
     <app-search-input
     (onEnter)="search($event)"
+    (onDebounce)="getSuggestions($event)"
     >
     </app-search-input>
   </div>
