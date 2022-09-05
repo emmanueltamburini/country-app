@@ -13,11 +13,10 @@ export class ByCountryComponent {
 
   constructor (private countryService: CountryService) {}
 
-  public search(): void {
+  public search(query: string): void {
     this.isError = false;
-    console.log(this.query);
 
-    this.countryService.searchCountry(this.query)
+    this.countryService.searchCountry(query)
       .subscribe({
         next: (response) => {
           this.countries = response;
@@ -26,6 +25,7 @@ export class ByCountryComponent {
           console.log(error);
           this.countries = [];
           this.isError = true;
+          this.query = query;
         }
       });
   }

@@ -1,0 +1,24 @@
+<table class="table table-hover" aria-describedby="Country information table">
+  <thead>
+    <tr>
+      <th id="number-head"> # </th>
+      <th id="flag-head"> Flag </th>
+      <th id="name-head"> Name </th>
+      <th id="population-head"> Population </th>
+      <th id="link-head"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let country of countries, let i = index">
+      <td id="number-body"> {{i + 1}} </td>
+      <td id="flag-body">
+        <img [src]="country.flag" class="small-flag img-fluid rounded-top" alt="country-flag">
+      </td>
+      <td id="name-body"> {{country.name}} </td>
+      <td id="population-body">{{country.population | number }}</td>
+      <td id="link-body">
+        <a [routerLink]="['/country', country.alpha2Code]">See more...</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
