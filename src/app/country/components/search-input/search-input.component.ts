@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 import { debounceTime, Subject } from 'rxjs';
 
 @Component({
@@ -9,6 +9,8 @@ export class SearchInputComponent implements OnInit {
   @Output() public onEnter: EventEmitter<string> = new EventEmitter<string>();
 
   @Output() public onDebounce: EventEmitter<string> = new EventEmitter<string>();
+
+  @Input('placeholder') public placeholder: string = '';
 
   public debouncer: Subject<string> = new Subject<string>;
 

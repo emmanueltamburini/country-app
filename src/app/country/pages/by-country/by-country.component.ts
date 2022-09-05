@@ -21,8 +21,7 @@ export class ByCountryComponent {
         next: (response) => {
           this.countries = response;
         },
-        error: (error) => {
-          console.log(error);
+        error: () => {
           this.countries = [];
           this.isError = true;
           this.query = query;

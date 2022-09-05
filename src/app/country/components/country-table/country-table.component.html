@@ -4,6 +4,7 @@
       <th id="number-head"> # </th>
       <th id="flag-head"> Flag </th>
       <th id="name-head"> Name </th>
+      <th id="capital-head"> capital </th>
       <th id="population-head"> Population </th>
       <th id="link-head"></th>
     </tr>
@@ -15,6 +16,7 @@
         <img [src]="country.flag" class="small-flag img-fluid rounded-top" alt="country-flag">
       </td>
       <td id="name-body"> {{country.name}} </td>
+      <td id="capital-body"> {{country.capital}} </td>
       <td id="population-body">{{country.population | number }}</td>
       <td id="link-body">
         <a [routerLink]="['/country', country.alpha2Code]">See more...</a>
