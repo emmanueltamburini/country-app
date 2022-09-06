@@ -1,17 +1,19 @@
-<h3>Search by region <small>{{currentRegion | titlecase}}</small></h3>
-<hr>
+<div class="animate__animated animate__fadeIn animate__faster">
+  <h2>Search by region <small>{{currentRegion | titlecase}}</small></h2>
+  <hr>
 
-<h5>Select a region</h5>
+  <h5>Select a region</h5>
 
-<div class="row">
-  <div class="col">
-    <button
-      *ngFor="let region of regions"
-      [class]="getClassCss(region)"
-      (click)="activeRegion(region)"
-    >
-      {{region | titlecase}}
-    </button>
+  <div class="row">
+    <div class="col">
+      <button
+        *ngFor="let region of regions"
+        [class]="getClassCss(region)"
+        (click)="activeRegion(region)"
+      >
+        {{region | titlecase}}
+      </button>
+    </div>
   </div>
 </div>
 
