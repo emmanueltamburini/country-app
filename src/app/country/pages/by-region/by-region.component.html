@@ -1,1 +1,29 @@
-<p>by-region works!</p>
+<h3>Search by region <small>{{currentRegion | titlecase}}</small></h3>
+<hr>
+
+<h5>Select a region</h5>
+
+<div class="row">
+  <div class="col">
+    <button
+      *ngFor="let region of regions"
+      [class]="getClassCss(region)"
+      (click)="activeRegion(region)"
+    >
+      {{region | titlecase}}
+    </button>
+  </div>
+</div>
+
+<div *ngIf="isError" class="alert alert-danger">
+  The region {{currentRegion}} was not found
+</div>
+
+<div *ngIf="countries.length > 0" class="row">
+  <div class="col">
+    <app-country-table
+      [countries]="countries"
+    >
+    </app-country-table>
+  </div>
+</div>
