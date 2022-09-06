@@ -12,6 +12,18 @@
       </app-search-input>
     </div>
   </div>
+  <ul *ngIf="!hideSuggestion" class="list-group">
+    <li *ngFor="let suggestion of suggestions" class="list-group-item list-group-item-action">
+      <a [routerLink]="['/country', suggestion.alpha2Code]" class="nav-link">
+        {{suggestion.name}}
+      </a>
+    </li>
+    <li class="list-group-item list-group-item-action">
+      <a class="nav-link" (click)="search(query)">
+        Search "{{query}}"
+      </a>
+    </li>
+  </ul>
   <hr>
 </div>
 

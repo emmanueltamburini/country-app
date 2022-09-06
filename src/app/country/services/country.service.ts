@@ -15,12 +15,16 @@ export class CountryService {
     return new HttpParams().set('fields', 'name,capital,alpha2Code,flag,population');
   }
 
+  get onlyNameParams (): HttpParams {
+    return new HttpParams().set('fields', 'name,alpha2Code');
+  }
+
   constructor(private http: HttpClient) { }
 
-  public searchCountry(query: string): Observable<Country[]> {
+  public searchCountry(query: string, onlyName: boolean = false): Observable<Country[]> {
     const url: string = `${this._apiUrl}/name/${query}`;
 
-    return this.http.get<Country[]>(url, { params: this.params });
+    return this.http.get<Country[]>(url, { params: onlyName ? this.onlyNameParams : this.params });
   }
 
   public searchCapital(query: string): Observable<Country[]> {
